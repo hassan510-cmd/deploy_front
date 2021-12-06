@@ -8,6 +8,7 @@ import PlacHolder from "./assets/img/placeholder2.jpeg"
 import { Description } from '@mui/icons-material'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Mainboard from '../Mainboard'
 
 
 export default class CreatePin extends Component {
@@ -23,6 +24,7 @@ export default class CreatePin extends Component {
             attachment: null,
             userboards: [],
             Board: [],
+            redirect_flag:true
         }
     }
 
@@ -66,7 +68,11 @@ export default class CreatePin extends Component {
             data.set("description", this.state.description);
             data.append("boards", this.state.Board)
             console.log(data)
-            axios.post('/pins/api/v1/pins/', data, { headers: Header })
+            axios.post('/pins/api/v1/pins/', data, { headers: Header }).then(()=>{
+                this.setState({
+                    redirect_flag:false
+                })
+            })
 
         }
     }
@@ -80,8 +86,12 @@ export default class CreatePin extends Component {
     }
 
     render() {
+        if (this.state.redirect_flag){
+
+       
         const { title, description, userboards } = this.state
         return (
+            
 
             <div>
 
@@ -130,5 +140,9 @@ export default class CreatePin extends Component {
                 </form>
             </div>
         )
+    }
+    else{
+        return <Mainboard/>
+    }
     }
 }
