@@ -37,7 +37,7 @@ class Profile extends React.Component {
                 let details = [];
                 details.push(boardss)
                 let data = details[0];
-                this.setState({ boards: data })
+                this.setState({ boards: data },()=>{console.log(`after set state ${this.state.boards}`)})
 
             })
     }
@@ -120,6 +120,7 @@ class Profile extends React.Component {
                     <Link to='/new-board' className='AddButton'>
                         <i class="fas fa-plus"></i>
                     </Link>
+
                     <div className='col-12 m-auto text-center d-flex justify-content-center align-items-center'>
 
                         <div className='mt-2' >
@@ -192,6 +193,7 @@ class Profile extends React.Component {
                     </div>
 
                     {this.state.boards.map((details, key) => {
+                        console.log(`details here from map board ${details}`)
                         return <Link key={key} to={'/board-details/' + details.id}
                             className='col-xxl-3 .col-lg-4 col-md-4 col-sm-8 col-12   board '
                             style={{ textDecoration: 'none', color: '#000' }} >
