@@ -102,7 +102,7 @@ export default class CreatePin extends Component {
                         {/*--------------------here is the pin's image--------------------*/}
                         <div style={{ marginTop: "20px" }}>
 
-                            <img src={this.state.img} alt='here' />
+                            <img style={{maxWidth:"500px"}} src={this.state.img} alt='here' />
                         </div>
                         {/*--------------------start details from here which divided into 8 rows-------------------- */}
                         <div className="form-details ">

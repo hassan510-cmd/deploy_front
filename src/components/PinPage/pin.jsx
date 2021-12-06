@@ -108,7 +108,7 @@ export default class Pin extends Component {
                 <div className="pin container" >
                     {/*--------------------here is the pin's image--------------------*/}
                     <div className="pin-img">
-                        <img style={{maxWidth:"500px"}} id='pinImg' src={pin.attachment} alt="pinImg" />
+                        <img  id='pinImg' src={pin.attachment} alt="pinImg" />
                     </div>
                     {/*--------------------start details from here which divided into 8 rows-------------------- */}
                     <div className="pin-details ">
