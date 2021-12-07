@@ -10,7 +10,7 @@ import axios from 'axios'
 export default class Pin extends Component {
     constructor(props) {
         super(props)
-        
+        this.DeletePin = this.DeletePin.bind(this)
         this.state = {
             display: "none",
             follow: 'follow',
@@ -108,6 +108,8 @@ export default class Pin extends Component {
             }
       
       axios.delete(`/pins/api/v1/pins/${id}/`, config);
+      this.props.history.push('/main-board');
+
       }
 
     render() {
@@ -130,7 +132,7 @@ export default class Pin extends Component {
                             {/* 1st section */}
                             <div >
                                 {/* dots */}
-                                <Link to='/main-board'>
+                                
                                     <button onClick={this.DeletePin} variant="light" 
                                             className='btn '
                                             style={{backgroundColor:'#E60023',
@@ -140,7 +142,7 @@ export default class Pin extends Component {
                                             >
                                         <i class="fas fa-trash"></i>
                                     </button>
-                                </Link>
+                                
                             </div>
                             {/* 2nd section */}
                             <div className='save-profile'>

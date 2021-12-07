@@ -10,7 +10,9 @@ import './board_details.css';
 
 class BoardDetalis extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
+        this.DeleteBoard = this.DeleteBoard.bind(this)
+
         // console.log(this.props.match.params.id);
         // console.log(this.props.match);
         this.state = {
@@ -51,7 +53,8 @@ class BoardDetalis extends React.Component {
             }
       
       axios.delete(`/boards/api/v1/boards/${id}/`, config);
-      
+      this.props.history.push('/profile');
+
       }
     
       render() {
