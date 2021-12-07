@@ -134,7 +134,7 @@ export default class CreatePin extends Component {
                             </div>
                         </div>
                         <button className="btn btn-danger profile-button" type="submit">
-                            Save Profile
+                            Create Pin
                         </button>
                     </div>
                 </form>

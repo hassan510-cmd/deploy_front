@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Redirect, Route } from 'react-router'
 import Header from '../HeaderComponent/Header'
 import Mainboard from '../Mainboard'
-import MainPage from '../MainPageComponent/MainPage'
+import Profile from "../ProfileComponent/Profile";
 import "./assets/css/bootstrap.min.css"
 import "./assets/css/main.css"
 
@@ -97,7 +97,7 @@ export default class CreateBoard extends Component {
         )
     }
     else{
-       return <Mainboard/>
+       return <Profile/>
     }
     }
 }

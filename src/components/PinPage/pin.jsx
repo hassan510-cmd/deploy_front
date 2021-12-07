@@ -97,6 +97,18 @@ export default class Pin extends Component {
             })
         })
     }
+    DeletePin(){
+        const id = this.props.match.params.id
+        let config = { 
+              headers: {
+                "Authorization": localStorage.getItem("Token")
+              },
+              data: { 
+              } 
+            }
+      
+      axios.delete(`/pins/api/v1/pins/${id}/`, config);
+      }
 
     render() {
         const pin = this.state.pin;
@@ -118,32 +130,23 @@ export default class Pin extends Component {
                             {/* 1st section */}
                             <div >
                                 {/* dots */}
-                                <button className='btn' >
-                                    <svg xmlns="http://www.w3.org/2000/svg" 
-                                        width="25" 
-                                        height="25" 
-                                        fill="currentColor" 
-                                        className="bi bi-three-dots" 
-                                        viewBox="0 0 16 16">
-                                        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                                    </svg>
-                                </button>
-                                {/* upload */}
-                                <button className='btn'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" 
-                                        width="20" 
-                                        height="20" 
-                                        fill="currentColor" 
-                                        className="bi bi-upload" 
-                                        viewBox="0 0 16 16">
-                                        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
-                                        <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z" />
-                                    </svg>
-                                </button>
+                                <Link to='/main-board'>
+                                    <button onClick={this.DeletePin} variant="light" 
+                                            className='btn '
+                                            style={{backgroundColor:'#E60023',
+                                                    padding:'12px 35px',
+                                                    borderRadius:'24px',
+                                                    color:'white'}}
+                                            >
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </Link>
                             </div>
                             {/* 2nd section */}
                             <div className='save-profile'>
-                                <small className='btn' style={{ fontWeight: "600" }}>Profile</small>
+                                <Link to='/profile'>
+                                    <small className='btn' style={{ fontWeight: "600" }}>Profile</small>
+                                </Link>                                
                                 <button onClick={this.downloadImage} className='save-btn'>Download</button>
                             </div>
                         </div>

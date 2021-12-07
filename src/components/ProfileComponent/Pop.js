@@ -53,7 +53,7 @@ const copyToClipBoard = async copyMe => {
                     <h5>Send this profile</h5>
                     <FacebookShareButton
                                     style={{paddingRight:'5px'}} 
-                                    url={"https://peing.net/ja/"}
+                                    url={"https://pinterest-iti.herokuapp.com/main-board"}
                                     hashtag={"#hashtag"}
                                     description={"aiueo"}
                                     className="Demo__some-network__share-button ">
@@ -61,7 +61,7 @@ const copyToClipBoard = async copyMe => {
                     </FacebookShareButton>
                     <TwitterShareButton 
                                     style={{paddingRight:'5px'}}
-                                    url={"https://peing.net/ja/"}
+                                    url={"https://pinterest-iti.herokuapp.com/main-board"}
                                     hashtag={"#hashtag"}
                                     description={"aiueo"}
                                     className="Demo__some-network__share-button ">
@@ -69,35 +69,24 @@ const copyToClipBoard = async copyMe => {
                     </TwitterShareButton>
                     <WhatsappShareButton 
                                     style={{paddingRight:'5px'}}
-                                    url={"https://peing.net/ja/"}
+                                    url={"https://pinterest-iti.herokuapp.com/main-board"}
                                     hashtag={"#hashtag"}
                                     description={"aiueo"}
                                     className="Demo__some-network__share-button">
                         <WhatsappIcon size={50} borderRadius={24} /> 
                     </WhatsappShareButton>
-                    <EmailShareButton url={"https://peing.net/ja/"}
+                    <EmailShareButton url={"https://pinterest-iti.herokuapp.com/main-board"}
                                     hashtag={"#hashtag"}
                                     description={"aiueo"}
                                     className="Demo__some-network__share-button">
                         <EmailIcon size={50} borderRadius={24} /> 
                     </EmailShareButton>
-                    <button  onClick={() => copyToClipBoard('https://peing.net/ja/')} style={{padding:'11px', borderRadius:'18px', marginLeft:'5px'}} >
+                    <button  onClick={() => copyToClipBoard('https://pinterest-iti.herokuapp.com/main-board')} style={{padding:'11px', borderRadius:'18px', marginLeft:'5px'}} >
                     <ContentCopyIcon color="action" />
                     </button>
 
                     {copySuccess}
                     <div class="sharethis-inline-share-buttons"></div>
-                            {/* <div style={{ alignItems: 'center', margin:'20px 120px' }}>
-                                <PinterestIcon style={{color:'#E60023', fontSize: '40px'}}/>
-                            </div>
-                    <h3 id="unstyled-modal-title" >Welcome to Pinterest</h3>
-                    <input name="email" placeholder="Email" type="text" style={Text} className="form-control" />
-                    <input name="password" placeholder="Password" type="password" style={Text} className="form-control" />
-                    <a href='/' className="l">Forgotten your password?</a>
-                    <Button type="submit"  style={{display: 'flex', height:' 44px', width: '100%',
-                        borderRadius: '18px',  justifyContent: 'center',
-                        alignItems: 'center',backgroundColor:'#E60023',  margin:'15px 5px'}}>Log in</Button>
-                <p id="unstyled-modal-description">By continuing, you agree to Pinterest's Terms of Service and acknowledge that you've read our Privacy Policy</p> */}
                 </Box>
             </StyledModal>
             </React.Fragment>)

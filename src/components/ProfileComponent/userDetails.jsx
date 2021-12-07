@@ -11,20 +11,10 @@ class UserDetails extends React.Component {
         super(props);
         this.state = {
             userData: [],
-            height: 0,
-            width: 0,
-            // windowWidth: window.innerWidth
+
             };
-            window.addEventListener("resize", this.update);
          };
-    // handleResize = (e) => {
-    //     this.setState({ windowWidth: window.innerWidth });
-    //     console.log(e);
-    //     console.log(this.state.windowWidth);
-    // };
-    // componentWillUnmount() {
-    //     window.addEventListener("resize", this.handleResize);
-    // } 
+ 
     
     componentDidMount() {
         this.update();
@@ -79,27 +69,12 @@ class UserDetails extends React.Component {
                                                 backgroundRepeat: 'no-repeat'}} ></div>
                                      )}
                                 {details.profile_image ? (
-                                    <img style={{ borderRadius: '50%', 
-                                                 
-                                                width:'200px', 
-                                                height:'200px',
-                                                display:'block',
-                                                position:'absolute',
-                                                top:'25%',
-                                                left:`${(windowWidth/2)-210}px`,
-                                            }} 
+                                    <img className='profileImg' 
                                             src={details.profile_image} 
                                             />
                                 ):
                                 (
-                                    <img style={{ borderRadius: '50%', 
-                                              
-                                                width:'200px', 
-                                                height:'200px',
-                                                display:'block',
-                                                position:'absolute',
-                                                bottom:'25%',
-                                                left:`${(windowWidth/2)-210}px` }} 
+                                    <img className='profileImg' 
                                             src='https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png' 
                                             />
                                 )}

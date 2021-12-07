@@ -13,10 +13,7 @@ class Profile extends React.Component {
             boardsDetail: [],
             boards: [],
             pins: [],
-            height: 0,
-            width: 0,
         };
-        window.addEventListener("resize", this.update);
     };
 
     componentDidMount() {
@@ -149,30 +146,12 @@ class Profile extends React.Component {
                                     </div>
                                 )}
                             {personData.profile_image ? (
-                                <img style={{
-                                    borderRadius: '50%',
-
-                                    width: '200px',
-                                    height: '200px',
-                                    display: 'block',
-                                    position: 'absolute',
-                                    top: '25%',
-                                    left: `${(windowWidth / 2) - 210}px`,
-                                }}
+                                <img className='profileImg' 
                                     src={personData.profile_image}
                                 />
                             ) :
                                 (
-                                    <img style={{
-                                        borderRadius: '50%',
-
-                                        width: '200px',
-                                        height: '200px',
-                                        display: 'block',
-                                        position: 'absolute',
-                                        bottom: '25%',
-                                        left: `${(windowWidth / 2) - 210}px`
-                                    }}
+                                    <img className='profileImg' 
                                         src='https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png'
                                     />
                                 )}

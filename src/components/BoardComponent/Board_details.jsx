@@ -41,17 +41,16 @@ class BoardDetalis extends React.Component {
         }
 
       DeleteBoard(){
+        const id = this.props.match.params.id
         let config = { 
               headers: {
                 "Authorization": localStorage.getItem("Token")
               },
-              data: { //! Take note of the `data` keyword. This is the request body.
-                
-                  //! more `key: value` pairs as desired.
+              data: { 
               } 
             }
       
-      axios.delete('/boards/api/v1/boards/1/', config);
+      axios.delete(`/boards/api/v1/boards/${id}/`, config);
       
       }
     
